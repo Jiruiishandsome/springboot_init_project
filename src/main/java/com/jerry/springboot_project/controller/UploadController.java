@@ -30,8 +30,8 @@ public class UploadController {
         AVATAR_TYPE.add("image/jpg");
         AVATAR_TYPE.add("image/jpeg");
     }
-    @Value("${app.uploadBaseUrl}")
-    private static String BASE_URL;
+
+    private static String BASE_URL="http://localhost:8080";
     /**
      * 上传图片
      *

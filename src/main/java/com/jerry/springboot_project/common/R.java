@@ -20,7 +20,7 @@ public class R<T>{
 
     public static<T> R<T> success(T object){
         R r=  new R<>();
-        r.code=0;
+        r.code=200;
         r.data=object;
         r.message="成功";
         return r;
@@ -28,7 +28,7 @@ public class R<T>{
     public static<T> R<T> error(String message){
         R r=new R<>();
 
-        r.code=1;
+        r.code=500;
         r.message=message;
         return r;
     }

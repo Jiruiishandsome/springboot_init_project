@@ -13,7 +13,7 @@ public class UserUtils {
     public static Integer getCurrentUserId(HttpServletRequest request) {
         String Token = request.getHeader("Authorization");
 
-        return JWT.getTokenId(Token);
+        return JWTUtil.getTokenId(Token);
 
     }
     public static String extractLastSixDigits(String phoneNumber) {

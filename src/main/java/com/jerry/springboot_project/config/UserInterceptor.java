@@ -6,7 +6,7 @@ import com.auth0.jwt.exceptions.SignatureVerificationException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
 
 import com.jerry.springboot_project.bean.BeanUtils;
-import com.jerry.springboot_project.utils.JWT;
+import com.jerry.springboot_project.utils.JWTUtil;
 import com.jerry.springboot_project.utils.RedisUtil;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -35,8 +35,8 @@ public class UserInterceptor implements HandlerInterceptor {
 
         // 捕获刚刚JWT中抛出的异常,并封装对应的返回信息
         try {
-            JWT.verifyToken(Token);
-            Integer userId=JWT.getTokenId(Token);
+            JWTUtil.verifyToken(Token);
+            Integer userId= JWTUtil.getTokenId(Token);
             if(redisUtil.get(userId.toString()) != null&&Token!=null) {
                 String findToken = redisUtil.get(userId.toString()).toString();
                 if (!Token.equals(findToken)) {

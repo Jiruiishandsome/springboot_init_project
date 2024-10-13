@@ -3,7 +3,6 @@ package com.jerry.springboot_project.utils;
 import com.auth0.jwt.JWTCreator;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Calendar;
 /**
@@ -11,10 +10,10 @@ import java.util.Calendar;
  *
  * @author Jerry 2024.10.13
  */
-public class JWT {
+public class JWTUtil {
     // 任意字符串
-    @Value("${app.JwtSign}")
-    private static String SING ;
+
+    private static String SING="xxxx@Jerry" ;
 
     private static String token;
 
@@ -23,11 +22,11 @@ public class JWT {
         return token;
     }
     public static void setToken(String token) {
-        JWT.token = token;
+        JWTUtil.token = token;
     }
 
     // 生成用户token
-    public static String getJWToken(Integer id){
+    public static String getJWToken(Long id){
 
         Calendar instance = Calendar.getInstance();
         // 设置过期时间,这里设置的是一天

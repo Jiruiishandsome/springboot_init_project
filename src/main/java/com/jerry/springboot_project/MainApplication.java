@@ -1,13 +1,9 @@
 package com.jerry.springboot_project;
 
-import com.jerry.springboot_project.config.AppConfig;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.ServletComponentScan;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * 主程序
@@ -21,8 +17,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 //@ServletComponentScan("com.jerry.springboot_project.bean")
 
 @SpringBootApplication
-@EnableConfigurationProperties(AppConfig.class)
-@ServletComponentScan("com.jerry.springboot_project.bean")
+//@EnableConfigurationProperties(AppConfig.class)
+@ServletComponentScan({"com.jerry.springboot_project.bean"})
 @Slf4j
 public class MainApplication {
 
