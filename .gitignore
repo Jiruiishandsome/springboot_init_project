@@ -67,7 +67,6 @@ CodeGenerator.java
 TestController.java
 application-my-prod.properties
 application-remote-prod.properties
-application-my-test.properties
 mybatis-generator-config.xml
 ChannelBizRankClient.java
 ChannelBizBrandWallClient.java
